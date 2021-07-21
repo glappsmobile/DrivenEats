@@ -1,42 +1,144 @@
-/* DISPLAY POSITION SIZE SPACING COLOR */
+/* DISPLAY POSITION SIZE SPACING COLOR - PROPRIETIES ORDER */
+/* GENERAL CONTAINERS TEXT */
+/* CTN = ctn */
+/* OPT = option */
+/* SEC = sec */
+
+.option {
+    display: none;
+}
+
+.card-option {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 174px;
+    height: 200px;
+    padding: 17px 15px 12px 15px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    margin-right: 15px;
+}
+
+.card-option > img {
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.txt-black {
+    color: #000000;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.card-option > p {
+    margin-top: 6px;
+}
+
+.txt-option-desc {
+    font-size: 15px;
+    color: #A6A6A6;
+    margin-top: 10px;
+    font-weight: 400;
+    max-height: 30px;
+    height: 30px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check-icon {
+    position: absolute;
+    font-size: 16px;
+    right: 9px;
+    bottom: 14px;
+    color: #32B72F;
+    display: none;
+
+}
+
+.card-option:hover {
+    cursor: pointer;
+}
+
+.option:checked + .card-option {
+     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+
+.option:checked + .card-option > .check-icon {
+    display: block;
+}
+
 
 :root {
     --header-height: 92px;
-    --container-button-height: 92px;
-    --main-reduction: calc(var(--header-height) + var(--container-button-height));
-    --section-height: calc(100vh - var(--main-reduction) - 100px);
+    --ctn-button-height: 92px;
+    --header-content-margin: 30px;
+    --main-reduction: calc(var(--header-height) + var(--ctn-button-height) + var(--header-content-margin));
+    --sec-height: calc(100vh - var(--main-reduction) - 100px);
 }
 
 body {
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+* {
     box-sizing: border-box;
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     height: 92px;
+    padding-left: 20px;
     background-color: #CF2B2B;
+    color: #FFFFFF;
+    font-size: 18px;
+    z-index: 10;
 }
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+}
+
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - var(--main-reduction));
-    margin: var(--header-height) 0 var(--container-button-height) 0;
-    background-color: yellow;
+    padding-left: 20px;
+    margin-bottom: var(--ctn-button-height);
+    margin-top: calc(var(--header-height) + var(--header-content-margin));
+    color: #333333;
 }
 
-.container-options-section {
+.ctn-options {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 15px;
+}
+
+.ctn-options-sec {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
     width: 100%;
     height: 30%;
-    background-color: purple;
 }
 
-.container-button {
+.ctn-button {
     position: fixed;
     bottom: 0;
     left:0;
@@ -44,4 +146,16 @@ main {
     width: 100%;
     height: 100px;
     background-color: green;
+    z-index: 10;
+
+}
+
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 44px;
+}
+
+h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 26px;
 }
