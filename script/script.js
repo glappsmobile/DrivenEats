@@ -1,6 +1,9 @@
 const KEY_PRINCIPAL = "principal";
-const KEY_BEBIDA = "bebida";
 const KEY_SOBREMESA = "sobremesa";
+const KEY_BEBIDA = "bebida";
+let checked = [null, null, null];
+let categorias = [KEY_PRINCIPAL, KEY_SOBREMESA, KEY_BEBIDA];
+let btnBuy = document.getElementById("btn-buy");
 
 const arrPrincipais = [
     {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
@@ -10,22 +13,51 @@ const arrPrincipais = [
     {name:"Pizza Prato Feito", id:"pizza", desc:"Metade pizza, metade prato feito", price:"59,00"}, 
 ];
 
-const arrBebidas = [
-    {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
-    {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
-    {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
-    {name:"Salada", id:"salada", desc:"", price:"7,00"},
-    {name:"Pizza Prato Feito", id:"pizza", desc:"Metade pizza, metade prato feito", price:"59,00"}, 
-];
-
 const arrSobremesas = [
-    {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
-    {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
-    {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
-    {name:"Salada", id:"salada", desc:"", price:"7,00"},
-    {name:"Pizza Prato Feito", id:"pizza", desc:"Metade pizza, metade prato feito", price:"59,00"}, 
+    {name:"Pudim", id:"pudim", desc:"1 Fatia", price:"2,50"},
+    {name:"Salada de frutas", id:"salada-de-frutas", desc:"", price:"4,00"},
+    {name:"Brownie", id:"brownie", desc:"", price:"2,00"},
+    {name:"Sorvete", id:"sorvete", desc:"500ml", price:"6,00"}, 
+    {name:"Açaí", id:"acai", desc:"500ml", price:"7,00"}, 
 ];
 
+const arrBebidas = [
+    {name:"Coca", id:"coca", desc:"300ml", price:"5,00"},
+    {name:"Dolly", id:"dolly", desc:"300ml", price:"0,50"}, 
+    {name:"Pepsi", id:"pepsi", desc:"300ml", price:"5,50"},
+    {name:"Mate", id:"mate", desc:"300ml", price:"2,00"},
+    {name:"Skol Beats", id:"skol-beats", desc:"300ml", price:"7,00"}, 
+];
+
+function getCheckedRadios(){
+
+    for (var i = 0; i < categorias.length; i++) {
+        let radios = document.getElementsByName(categorias[i]);
+        for (z = 0;  z < radios.length; z++) {
+            if (radios[z].checked) {
+                checked[i] = z;
+                break;
+            }
+        }
+    }
+
+    if (isAllChecked()){
+        console.clear();
+        console.log("INDEX SELECIONADO DE CADA CATEGORIA:");
+        console.log("Prato Principal: "+arrPrincipais[checked[0]]["name"] );
+        console.log("Bebida: "+arrBebidas[checked[2]]["name"] );
+        console.log("Sobremesa: "+arrSobremesas[checked[1]]["name"] );
+        btnBuy.disabled = false;
+    }
+}
+
+function isAllChecked(){
+    let isAllChecked = true;
+    for (i = 0; i < checked.length; i++){
+        if (checked[i] == null) isAllChecked = false;
+    }
+    return isAllChecked;
+}
 
 
 function addOptions(idContainer, arrOptions){
@@ -35,7 +67,7 @@ function addOptions(idContainer, arrOptions){
     for (i = 0; i < arrOptions.length; i++){
         opts +=
         '<label> ' +
-        '<input type="radio" name="'+idContainer+'" class="option" />' +
+        '<input type="radio" name="'+idContainer+'" class="option" onclick="getCheckedRadios()"/>' +
         '<div class="card-option">' +
         '<img src="images/'+arrOptions[i]["id"]+'.jpg"/>' +
         '<p><strong>'+arrOptions[i]["name"]+'</strong></p>' +
@@ -49,44 +81,17 @@ function addOptions(idContainer, arrOptions){
     container.innerHTML = opts;
 }
 
-addOptions(KEY_PRINCIPAL, arrPrincipais);
-addOptions(KEY_BEBIDA, arrBebidas);
-addOptions(KEY_SOBREMESA, arrSobremesas);
-
-
-/*
-'\<label\>
-<input type="radio" name="principal" class="option" />
-  <div class="card-option">
-    <img src="images/xfininho.jpg"/>
-    <p><strong>Pizza Prato Feito</strong></p>
-    <p class="txt-option-desc">Metade pizza, <br> metade prato feito</p>
-    <p class="txt-black">R$ 59,00</p>
-    <ion-icon name="checkmark-circle" class="check-icon"></ion-icon>
-  </div>
-</label>';*/
-
-
-function getCheckedRadio(){
-    var categorias = ["principal", "bebida", "sobremesa"];
-    var valores = ["nenhum", "nenhum", "nenhum"];
-
-    for (var i = 0; i < categorias.length; i++) {
-
-        let radios = document.getElementsByName(categorias[i]);
-
-        for (z = 0;  z < radios.length; z++) {
-            if (radios[z].checked) {
-                valores[i] = z;
-                break;
-            }
-
-        }
+function buy(){
+    if(isAllChecked()){
+        alert("Teste: "+arrPrincipais[checked[0]]["name"]+" + "+arrSobremesas[checked[1]]["name"]+" + "+arrBebidas[checked[2]]["name"])
+    } else {
+        alert("Você precisa selecionar os 3 itens.");
     }
-    console.clear();
-    console.log("INDEX SELECIONADO DE CADA CATEGORIA:");
-    console.log("Prato Principal: "+valores[0] );
-    console.log("Bebida: "+valores[1] );
-    console.log("Sobremesa: "+valores[2] );
 }
+
+addOptions(KEY_PRINCIPAL, arrPrincipais);
+addOptions(KEY_SOBREMESA, arrSobremesas);
+addOptions(KEY_BEBIDA, arrBebidas);
+
+
 

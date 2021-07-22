@@ -139,13 +139,16 @@ main {
 }
 
 .ctn-button {
+    display: flex;
     position: fixed;
     bottom: 0;
     left:0;
     right: 0;
     width: 100%;
     height: 100px;
-    background-color: green;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 
 }
@@ -158,4 +161,34 @@ h1 {
 h2 {
     font-family: 'Righteous', cursive;
     font-size: 26px;
+}
+
+.button-buy:disabled {
+    display: flex;
+    background-color: #CBCBCB;
+    border-radius: 50px;
+    border: none;
+    width: 86%;
+    height: 61px;
+    color: #FFFFFF;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-buy:enabled {
+    display: flex;
+    background-color: #32B72F;
+    border-radius: 50px;
+    border: none;
+    width: 86%;
+    height: 61px;
+    color: #FFFFFF;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-buy p {
+    max-width: 190px;
 }
