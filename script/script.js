@@ -41,14 +41,8 @@ function getCheckedRadios(){
         }
     }
 
-    if (isAllChecked()){
-        console.clear();
-        console.log("INDEX SELECIONADO DE CADA CATEGORIA:");
-        console.log("Prato Principal: "+arrPrincipais[checked[0]]["name"] );
-        console.log("Bebida: "+arrBebidas[checked[2]]["name"] );
-        console.log("Sobremesa: "+arrSobremesas[checked[1]]["name"] );
-        btnBuy.disabled = false;
-    }
+    if (isAllChecked()) btnBuy.disabled = false;
+    
 }
 
 function isAllChecked(){
@@ -83,7 +77,11 @@ function addOptions(idContainer, arrOptions){
 
 function buy(){
     if(isAllChecked()){
-        alert("Teste: "+arrPrincipais[checked[0]]["name"]+" + "+arrSobremesas[checked[1]]["name"]+" + "+arrBebidas[checked[2]]["name"])
+        alert("Teste: "+"\n" +
+        arrPrincipais[checked[0]]["name"] + " = " + arrPrincipais[checked[0]]["price"] + "\n" +
+        arrSobremesas[checked[1]]["name"]+" = "+ arrSobremesas[checked[1]]["price"] + "\n" +
+        arrBebidas[checked[2]]["name"]+ " = " +arrBebidas[checked[2]]["price"] + "\n"
+        )
     } else {
         alert("Você precisa selecionar os 3 itens.");
     }

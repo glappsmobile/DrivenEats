@@ -192,3 +192,7 @@ h2 {
 .button-buy p {
     max-width: 190px;
 }
+
+.panel-confirm {
+    display: none;
+}
