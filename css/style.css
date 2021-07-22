@@ -46,9 +46,7 @@ strong {
     font-weight: 400;
     max-height: 30px;
     height: 30px;
-
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .check-icon {
@@ -107,6 +105,7 @@ header {
     color: #FFFFFF;
     font-size: 18px;
     z-index: 10;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -119,7 +118,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     padding-left: 20px;
-    margin-bottom: var(--ctn-button-height);
+    margin-bottom: calc(var(--ctn-button-height) + 10px);
     margin-top: calc(var(--header-height) + var(--header-content-margin));
     color: #333333;
 }
@@ -135,7 +134,7 @@ main {
     flex-direction: column;
     margin-top: 20px;
     width: 100%;
-    height: 30%;
+    height: 27%;
 }
 
 .ctn-button {
