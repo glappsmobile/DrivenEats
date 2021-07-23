@@ -55,7 +55,9 @@ function isAllChecked(){
 
 
 function addOptions(idContainer, arrOptions){
-    let container = document.getElementById("container-options-"+idContainer);
+   // let container = document.getElementById("container-options-"+idContainer);
+    let container = document.querySelector('.container-options-'+idContainer);
+    
     let opts = "";
 
     for (i = 0; i < arrOptions.length; i++){

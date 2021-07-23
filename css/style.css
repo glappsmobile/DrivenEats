@@ -193,5 +193,19 @@ h2 {
 }
 
 .panel-confirm {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #50D074;
+    width: 400px;
+    height: 400px;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    margin: auto;
+    font-size: 22px;
+    color: #FFFFFF;
 }
