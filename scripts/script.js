@@ -1,3 +1,4 @@
+
 function addOptions(iArrOptions, index){
     let opts = "";
     let type = "food-type-"+index;
@@ -10,7 +11,7 @@ function addOptions(iArrOptions, index){
         let price = iArrOptions[i]["price"];
 
         opts += `
-        <div class="card-option ${type}" onclick="select(this)">
+        <div class="card-option ${type} ${i}" onclick="select(this)">
         <img src="images/${id}.jpg"/>
         <p><strong>${name}</strong></p>
         <p class="txt-option-desc">${description}</p>
@@ -37,16 +38,25 @@ function checkRequirements(){
     let btnBuy = document.querySelector(".btn-buy");
     let minSelected = arrOptions.length;
     let totalSelected = document.querySelectorAll(".selected").length;
-    console.log(minSelected + " - "+totalSelected);
+
     if (totalSelected >= minSelected) btnBuy.disabled = false;
 
     return !btnBuy.disabled;
 }
 
 function buy(){
+    let selecteds = document.querySelectorAll(".selected");
+    let selectedIndexes = [];
+    //ROCOVER INDEXES FROM THE SELECTED ELEMENTS AND PUSH INTO selectedIndexes;
+    selecteds.forEach((element, index) => selectedIndexes[index] = element.classList[2]);
+    let alertTestText = "";
 
-    alert("Teste:");
+    //RECOVER THE VALUES FROM arrOptions OF THE SELECTED OPTIONS OF EACH CATEGORY 
+    selectedIndexes.forEach((elementIndex, typeIndex) => 
+    alertTestText += arrOptions[typeIndex][elementIndex]["name"] + " = " + arrOptions[typeIndex][elementIndex]["price"] + "\n"
+    );
 
+    alert(alertTestText);
 }
 
 arrOptions.forEach((element, index) => addOptions(element, index));
