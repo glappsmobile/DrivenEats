@@ -12,12 +12,14 @@ let arrOptions = [
         {name:"Salada de frutas", id:"salada-de-frutas", desc:"", price:"4,00"},
         {name:"Brownie", id:"brownie", desc:"", price:"2,00"},
         {name:"Sorvete", id:"sorvete", desc:"500ml", price:"6,00"}, 
-        {name:"Açaí", id:"acai", desc:"500ml", price:"7,00"}],
+        {name:"Açaí", id:"acai", desc:"500ml", price:"7,00"}
+    ],
 
    [
         {name:"Coca", id:"coca", desc:"300ml", price:"5,00"},
         {name:"Dolly", id:"dolly", desc:"300ml", price:"0,50"}, 
         {name:"Pepsi", id:"pepsi", desc:"300ml", price:"5,50"},
         {name:"Mate", id:"mate", desc:"300ml", price:"2,00"},
-        {name:"Skol Beats", id:"skol-beats", desc:"300ml", price:"7,00"}]
+        {name:"Skol Beats", id:"skol-beats", desc:"300ml", price:"7,00"}
     ]
+]

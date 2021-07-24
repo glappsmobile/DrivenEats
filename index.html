@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/style.css" />
-        <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=instagram.com">
+        <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=ifood.com.br">
         <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 
         <title> DrivenEats </title>
@@ -33,15 +33,18 @@
         </main>
 
         <div class="ctn-button">
-            <button class="btn-buy"  onclick="buy()" disabled><p>Selecione os 3 itens para fechar o pedido</p></button>
+            <button class="btn-buy"  onclick="buy();" disabled><p>Selecione os 3 itens para fechar o pedido</p></button>
         </div>
 
-        <!--div class="panel-confirm"></div>
-            <p class="txt-title-confirm-panel">Confirme seu pedido</p>
-            <div class="ctn-items-confirm"></div>
-            <button class="button-buy">Tudo certo, pode pedir!</p></button>
-            <button class="button-buy">Cancelar</button>
-        </div-->
+        <div class="confirm-window hidden">
+            <div class="overlay" onclick="toggleConfirmWindow();"></div>
+            <div class="panel-confirm">
+                <p class="txt-title-confirm-panel"><strong>Confirme seu pedido</strong></p>
+                <div class="ctn-items-confirm"></div>
+                <button class="btn-panel btn-ok">Tudo certo, pode pedir!</p></button>
+                <button class="btn-panel btn-cancel" onclick="toggleConfirmWindow();">Cancelar</button>
+            </div>
+        </div>
 
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <script src="scripts/consts.js"></script>
