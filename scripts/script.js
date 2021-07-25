@@ -82,8 +82,9 @@ function generateRevisionScreen(elementIndex, typeIndex){
         let clientName = prompt("Informe seu nome");
         let clientAddress = prompt("Informe seu endereço");
 
-        message += `- *Nome*: ${clientName} \n`;
-        message += `- *Endereço*: ${clientAddress} \n`;
+        clientInfo += `\n\n`;
+        clientInfo += `Nome: ${clientName} \n`;
+        clientInfo += `Endereço: ${clientAddress}`;
 
         container.innerHTML += `
         <div class="joined-text">
@@ -116,6 +117,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
         let strTotalPrice = priceToString(totalPrice);
         
         message += `*Total*: R$ *${strTotalPrice}*`;
+        message += clientInfo;
 
         container.innerHTML += `
         <div class="row-item-confirm">
@@ -131,6 +133,7 @@ function cleanValues(){
     let ctnConfirmItems = document.querySelector(".ctn-items-confirm");
 
     totalPrice = 0;
+    clientInfo = "";
     message = "Olá, gostaria de fazer o *pedido*: \n";
     ctnConfirmItems.innerHTML = "";
 }
@@ -140,6 +143,7 @@ function sendToWhatsapp(){
     window.open("https://wa.me/5521968090449?text=" + message);
 }
 
+let clientInfo = "";
 let totalPrice = 0;
 let message = "Olá, gostaria de fazer o *pedido*: \n";
 cleanValues();
