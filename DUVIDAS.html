@@ -1,4 +1,4 @@
-
+<script>
 /*
     DÚVIDA 1
     ESSE IF ELSE NA FUNÇÃO buy() É PRA CASO O USUÁRIO TIRE O DISABLED DO BUTTON PELO INSPECT ELEMENTS.
@@ -68,4 +68,23 @@ function addOptions(iArrOptions, index){
 
     container.innerHTML = opts;
 }
+</script>
 
+<style>
+    /*DUVIDA 3, POR ALGUM MOTIVO O SELETOR:*/
+
+    .ctn-items-confirm > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 13px;
+    }
+
+    /*ESTÁ SOBREPONDO O SELETOR:*/
+    .joined-text {
+        justify-content: flex-start !important;
+    }
+
+    /*MESMO QUE .joined-text SEJA MAIS ESPECÍFICO, SÓ CONSEGUI APLICAR A PROPRIEDADE USANDO !important*/
+
+</style>

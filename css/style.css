@@ -254,6 +254,10 @@ main {
     margin-bottom: 13px;
 }
 
+.joined-text {
+    justify-content: flex-start !important;
+}
+
 .ctn-items-confirm > div:last-child {
     margin-bottom: 0;
 }

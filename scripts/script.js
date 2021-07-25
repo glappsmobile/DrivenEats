@@ -70,14 +70,41 @@ function priceToString(price){
 
 
 function generateRevisionScreen(elementIndex, typeIndex){
+    
     let lastTypeIndex =  arrOptions.length-1;
     let container = document.querySelector(".ctn-items-confirm");
     let name = arrOptions[typeIndex][elementIndex]["name"];
     let price = arrOptions[typeIndex][elementIndex]["price"];
     totalPrice += stringToPrice(price);   
 
+
+    if (typeIndex == 0) {
+        let clientName = prompt("Informe seu nome");
+        let clientAddress = prompt("Informe seu endereço");
+
+        message += `- *Nome*: ${clientName} \n`;
+        message += `- *Endereço*: ${clientAddress} \n`;
+
+        container.innerHTML += `
+        <div class="joined-text">
+        <span> Nome: </span>
+        <span>&nbsp;</span>
+        <span>${clientName}</span>
+        </div>
+        `;
+
+        container.innerHTML += `
+        <div class="joined-text">
+        <span> Endereço: </span>
+        <span>&nbsp;</span>
+        <span>${clientAddress}</span>
+        </div>
+        `;
+    }
+
+
     message += `- *${types[typeIndex]}*: ${name} \n`;
-    
+
     container.innerHTML +=  `
     <div class="row-item-confirm">
     <span>${name}</span>
@@ -88,7 +115,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
     if (typeIndex == lastTypeIndex) {
         let strTotalPrice = priceToString(totalPrice);
         
-        message += `*Total*: R$ *${strTotalPrice}`;
+        message += `*Total*: R$ *${strTotalPrice}*`;
 
         container.innerHTML += `
         <div class="row-item-confirm">

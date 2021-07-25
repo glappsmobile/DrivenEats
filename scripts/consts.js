@@ -10,7 +10,7 @@ let arrOptions = [
     [
         {name:"Pudim", id:"pudim", desc:"1 Fatia", price:"2,50"},
         {name:"Salada de frutas", id:"salada-de-frutas", desc:"", price:"4,00"},
-        {name:"Brownie", id:"brownie", desc:"", price:"2,00"},
+        {name:"Brownie", id:"brownie", desc:"", price:"2,00"}, 
         {name:"Sorvete", id:"sorvete", desc:"500ml", price:"6,00"}, 
         {name:"Açaí", id:"acai", desc:"500ml", price:"7,00"}
     ],
