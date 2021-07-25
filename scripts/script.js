@@ -51,7 +51,7 @@ function buy(){
     //ROCOVER INDEXES FROM THE SELECTED ELEMENTS AND PUSH INTO selectedIndexes;
     selecteds.forEach((element, index) => selectedIndexes[index] = element.classList[2]);
 
-    //RECOVER THE VALUES FROM arrOptions OF THE SELECTED OPTIONS OF EACH CATEGORY 
+    //PUSH THE INDEXES OF THE SELECTED ITEMS AND USE THEIR POSITIONS AS INDEXES OF THEIR TYPE 
     selectedIndexes.forEach((elementIndex, typeIndex) =>  generateRevisionScreen(elementIndex, typeIndex));
 }
 
