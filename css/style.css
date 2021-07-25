@@ -69,8 +69,8 @@ main {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    width: 100%;
-    height: 255px;
+    width: auto;
+    height: 265px;
 }
 
 .ctn-options {
