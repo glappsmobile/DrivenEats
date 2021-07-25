@@ -9,13 +9,13 @@ function addOptions(iArrOptions, index){
         let price = iArrOptions[i]["price"];
 
         container.innerHTML += `
-        <div class="card-option ${type} ${i}" onclick="select(this)">
+        <li class="card-option ${type} ${i}" onclick="select(this)">
         <img src="images/${id}.jpg"/>
         <p><strong>${name}</strong></p>
         <p class="txt-option-desc">${description}</p>
         <p class="txt-black">R$ ${price}</p>
         <ion-icon name="checkmark-circle" class="check-icon"></ion-icon>
-        </div>
+        </li>
         `;
     }
 }
@@ -93,26 +93,25 @@ function generateRevisionScreen(elementIndex, typeIndex){
         clientInfo += `Endereço: ${clientAddress}`;
 
         container.innerHTML += `
-        <div class="joined-text">
+        <li class="joined-text">
         <p> Nome: ${clientName}</p>
-        </div>
+        </li>
         `;
 
         container.innerHTML += `
-        <div class="joined-text">
+        <li class="joined-text">
         <p> Endereço: ${clientAddress}</p>
-        </div>
+        </li>
         `;
     }
-
 
     message += `- *${types[typeIndex]}*: ${name} \n`;
 
     container.innerHTML +=  `
-    <div class="row-item-confirm">
+    <li class="row-item-confirm">
     <span>${name}</span>
     <span class="price">R$ ${price}</span>
-    </div>
+    </li>
     `;
     
     if (typeIndex == lastTypeIndex) {
@@ -122,10 +121,10 @@ function generateRevisionScreen(elementIndex, typeIndex){
         message += clientInfo;
 
         container.innerHTML += `
-        <div class="row-item-confirm">
+        <li class="row-item-confirm">
         <span><strong> TOTAL </strong></span>
         <span class="price"><strong>R$ ${strTotalPrice} </strong></span>
-        </div>
+        </li>
         `;
     }
 

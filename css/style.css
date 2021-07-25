@@ -252,7 +252,7 @@ main {
     margin-bottom: 28px;
 }
 
-.ctn-items-confirm > div {
+.ctn-items-confirm > li {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -270,7 +270,7 @@ main {
 }
 
 
-.ctn-items-confirm > div:last-child {
+.ctn-items-confirm > li:last-child {
     margin-bottom: 0;
 }
 
