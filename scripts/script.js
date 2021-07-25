@@ -82,23 +82,22 @@ function generateRevisionScreen(elementIndex, typeIndex){
         let clientName = prompt("Informe seu nome");
         let clientAddress = prompt("Informe seu endereço");
 
+        if (clientName === null || clientName.replace(/ /g, "") === "") clientName = "Não informado";
+        if (clientAddress === null || clientAddress.replace(/ /g, "") === "") clientAddress = "Não informado";
+
         clientInfo += `\n\n`;
         clientInfo += `Nome: ${clientName} \n`;
         clientInfo += `Endereço: ${clientAddress}`;
 
         container.innerHTML += `
         <div class="joined-text">
-        <span> Nome: </span>
-        <span>&nbsp;</span>
-        <span>${clientName}</span>
+        <p> Nome: ${clientName}</p>
         </div>
         `;
 
         container.innerHTML += `
         <div class="joined-text">
-        <span> Endereço: </span>
-        <span>&nbsp;</span>
-        <span>${clientAddress}</span>
+        <p> Endereço: ${clientAddress}</p>
         </div>
         `;
     }

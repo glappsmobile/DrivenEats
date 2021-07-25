@@ -78,13 +78,35 @@ function addOptions(iArrOptions, index){
         display: flex;
         justify-content: space-between;
         margin-bottom: 13px;
+        background-color: red;
+
     }
 
     /*ESTÁ SOBREPONDO O SELETOR:*/
     .joined-text {
-        justify-content: flex-start !important;
+        background-color: green !important;
     }
 
-    /*MESMO QUE .joined-text SEJA MAIS ESPECÍFICO, SÓ CONSEGUI APLICAR A PROPRIEDADE USANDO !important*/
+    /*MESMO QUE .joined-text SEJA MAIS ESPECÍFICO, SÓ CONSEGUI APLICAR A PROPRIEDADE USANDO !important.
+    CASO CONTRÁRIO A PROPRIEDADE DO .ctn-items-confirm > div SOBREPÕE A DO .joined-text.
+    EU NÃO PRECISO MAIS DA CLASSE PORQUE CONSEGUI RESOLVER DE OUTRA FORMA, MAS DEIXEI ELA LÁ SÓ PA PODER TIRAR ESSA
+    DÚVIDA, ESSA CLASSE SE APLICA NA JANELA DE CONFIRMAÇÃO DE PEDIDOS, NAS DIVS DO NOME E DO ENDEREÇO
+    */
 
 </style>
+
+
+<script>
+    // DÚVIDA 4: É UMA MÁ PRÁTICA NÃO USAR CHAVES QUANDO O IF TEM SÓ UMA LINHA?
+    
+    //Ex.:
+
+    if (clientName === null || clientName.replace(/ /g, "") === "") clientName = "Não informado";
+
+    // Vs
+
+    if (clientName === null || clientName.replace(/ /g, "") === ""){
+        clientName = "Não informado";
+    } 
+
+</script>

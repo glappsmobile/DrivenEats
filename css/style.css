@@ -253,11 +253,18 @@ main {
     display: flex;
     justify-content: space-between;
     margin-bottom: 13px;
+
 }
 
 .joined-text {
-    justify-content: flex-start !important;
+    /*DÚVIDA 3*/
 }
+
+.joined-text > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 .ctn-items-confirm > div:last-child {
     margin-bottom: 0;
