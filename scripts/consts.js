@@ -23,3 +23,5 @@ let arrOptions = [
         {name:"Skol Beats", id:"skol-beats", desc:"300ml", price:"7,00"}
     ]
 ]
+
+let types = ["Prato", "Sobremesa", "Bebida"];

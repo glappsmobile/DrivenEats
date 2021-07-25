@@ -76,19 +76,25 @@ function generateRevisionScreen(elementIndex, typeIndex){
     let name = arrOptions[typeIndex][elementIndex]["name"];
     let price = arrOptions[typeIndex][elementIndex]["price"];
     totalPrice += stringToPrice(price);   
+
+    message += `- *${types[typeIndex]}*: ${name} \n`;
     
     container.innerHTML +=  `
     <div class="row-item-confirm">
     <span>${name}</span>
-    <span>R$ ${price}</span>
+    <span class="price">R$ ${price}</span>
     </div>
     `;
     
     if (typeIndex == lastTypeIndex) {
+        let strTotalPrice = priceToString(totalPrice);
+        
+        message += `*Total*: R$ ${strTotalPrice} \n`;
+
         container.innerHTML += `
         <div class="row-item-confirm">
         <span><strong> TOTAL </strong></span>
-        <span><strong> R$ ${priceToString(totalPrice)} </strong></span>
+        <span class="price"><strong>R$ ${strTotalPrice} </strong></span>
         </div>
         `;
     }
@@ -99,11 +105,19 @@ function cleanValues(){
     let ctnConfirmItems = document.querySelector(".ctn-items-confirm");
 
     totalPrice = 0;
+    message = "Olá, gostaria de fazer o *pedido*: \n";
     ctnConfirmItems.innerHTML = "";
+}
+
+function sendToWhatsapp(){ 
+    //console.log(message);
+    message = encodeURIComponent(message);
+    window.open("https://wa.me/5521968090449?text=" + message);
 }
 
 
 let totalPrice = 0;
+let message = "Olá, gostaria de fazer o *pedido*: \n";
 cleanValues();
 arrOptions.forEach((element, index) => addOptions(element, index));
 
