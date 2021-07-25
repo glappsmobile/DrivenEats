@@ -4,7 +4,21 @@ let arrOptions = [
         {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
         {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
         {name:"Salada", id:"salada", desc:"", price:"7,00"},
-        {name:"Pizza Prato Feito", id:"pizza", desc:"Metade pizza, metade prato feito", price:"59,00"}
+        {name:"Pizza Prato Feito", id:"pizza", desc:"Metade pizza, metade prato feito", price:"59,00"},
+        {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
+        {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
+        {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
+        {name:"Salada", id:"salada", desc:"", price:"7,00"},
+        {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
+        {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
+        {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
+        {name:"Salada", id:"salada", desc:"", price:"7,00"},
+        {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
+        {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
+        {name:"Steak au poivre", id:"steak-au-poivre", desc:"Steak au poivre e arroz", price:"47,00"},
+        {name:"Salada", id:"salada", desc:"", price:"7,00"},
+
+
     ],
 
     [

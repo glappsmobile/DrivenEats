@@ -1,4 +1,3 @@
-
 function addOptions(iArrOptions, index){
     let type = "food-type-"+index;
     let container = document.querySelector(`.ctn-options` + `.${type}`);
@@ -89,7 +88,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
     if (typeIndex == lastTypeIndex) {
         let strTotalPrice = priceToString(totalPrice);
         
-        message += `*Total*: R$ ${strTotalPrice} \n`;
+        message += `*Total*: R$ *${strTotalPrice}* \n`;
 
         container.innerHTML += `
         <div class="row-item-confirm">
@@ -110,15 +109,11 @@ function cleanValues(){
 }
 
 function sendToWhatsapp(){ 
-    //console.log(message);
     message = encodeURIComponent(message);
     window.open("https://wa.me/5521968090449?text=" + message);
 }
-
 
 let totalPrice = 0;
 let message = "Olá, gostaria de fazer o *pedido*: \n";
 cleanValues();
 arrOptions.forEach((element, index) => addOptions(element, index));
-
-
