@@ -88,7 +88,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
     if (typeIndex == lastTypeIndex) {
         let strTotalPrice = priceToString(totalPrice);
         
-        message += `*Total*: R$ *${strTotalPrice}* \n`;
+        message += `*Total*: R$ *${strTotalPrice}`;
 
         container.innerHTML += `
         <div class="row-item-confirm">
