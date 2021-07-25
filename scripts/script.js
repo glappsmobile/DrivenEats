@@ -34,9 +34,12 @@ function checkRequirements(){
     let minSelected = arrOptions.length;
     let totalSelected = document.querySelectorAll(".selected").length;
     let btnBuy = document.querySelector(".btn-buy");
+    let btnText = document.querySelector(".btn-buy > p");
 
-    if (totalSelected >= minSelected) btnBuy.disabled = false;
-
+    if (totalSelected >= minSelected) {
+        btnBuy.disabled = false;
+        btnText.innerHTML = "<en>Fechar pedido<en>";
+    }
     return !btnBuy.disabled;
 }
 
