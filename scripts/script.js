@@ -94,8 +94,8 @@ function generateRevisionScreen(elementIndex, typeIndex){
         if (clientAddress === null || clientAddress.replace(/ /g, "") === "") clientAddress = "Não informado";
 
         clientInfo += `\n\n`;
-        clientInfo += `Nome: ${clientName} \n`;
-        clientInfo += `Endereço: ${clientAddress}`;
+        clientInfo += `*Nome*: ${clientName} \n`;
+        clientInfo += `*Endereço*: ${clientAddress}`;
 
         container.innerHTML += `
         <li class="joined-text">
@@ -122,7 +122,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
     if (typeIndex == lastTypeIndex) {
         let strTotalPrice = priceToString(totalPrice);
         
-        message += `*Total*: R$ *${strTotalPrice}*`;
+        message += `*Total*: R$ ${strTotalPrice}`;
         message += clientInfo;
 
         container.innerHTML += `

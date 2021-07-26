@@ -307,11 +307,11 @@ main > * {
     }
 
     .panel-confirm {
-        max-width: 50%;
+        max-width: 30%;
     }
 
     .btn-buy {
-        max-width: 50%;
+        max-width: 90%;
     }
 
     main {
