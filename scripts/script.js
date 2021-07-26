@@ -25,10 +25,10 @@ function addOptions(iArrOptions, index){
     }
 }
 
-function select(element, type){
+function select(element){
     //TAKES THE ELEMENT'S 2nd CLASS (.type-food-nth) TO IDENTIFY WHICH CATEGORY IS BEING SELECTED
     let type = element.classList[1];
-    let prevSelected = document.querySelector(`.card-option` + `.${type}` + `.selected`);
+    let prevSelected = document.querySelector(`.${type}.selected`);
 
     if (prevSelected !== null) prevSelected.classList.remove("selected");
     element.classList.add("selected");
