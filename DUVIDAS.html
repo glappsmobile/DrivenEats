@@ -109,4 +109,27 @@ function addOptions(iArrOptions, index){
         clientName = "Não informado";
     } 
 
+
+    /*DUVIDA 5: POR ALGUM MOTIVO, AO CARREGAR O SITE PELO CELULAR (NÃO PELO DESKTOP COM VISUALIZAÇÃO MOBILE, TEM QUE SER O CELULAR FÍSICO) O NAVEGADOR 
+    (TANTO BRAVE QUANTO CHROME), "COMEM" A ÚLTIMA MARGIN-RIGHT DO ÚLTIMO FILHO DE CADA CONTAINER COM SCROLL HORIZONTAL, NO CASO OS .card-option.
+    OU SEJA, NO NAVEGADOR DESKTOP, O LAST CHILD TEM A ÚLTIMA MARGIN, JÁ NO MOBILE NÃO.
+
+    O WORKAROUND QUE EU ENCONTREI FOI ADICIONAR UM PIXEL COMO LAST-CHILD, DESSA FORMA O ÚLTIMO FILHO SE TORNA O ANTE-PENÚLTIMO FILHO E NÃO TEM SUA MARGEM 
+    COMIDA PELO NAVEGADOR:
+
+    .pixel {
+        width: 1px;
+        height: 1px;
+    }*/
+
+    if (i === iArrOptions.length-1){
+            //WORKAROUND FOR ADDING A MARGIN-RIGHT ON LAST-CHILD ON MOBILE
+            container.innerHTML += `<li><div class="pixel"></div></li>`;
+    }
+
+    /*
+    EXISTE ALGUMA FORMA DE EVITAR QUE A MARGEM SEJA COMIDA, SEM TER QUE ADICIONAR ESSE PIXEL?
+
+    LINK DO GITHUB PAGES: https://glappsmobile.github.io/DrivenEats/
+    */
 </script>

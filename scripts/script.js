@@ -20,7 +20,7 @@ function addOptions(iArrOptions, index){
 
         if (i === iArrOptions.length-1){
             //WORKAROUND FOR ADDING A MARGIN-RIGHT ON LAST-CHILD ON MOBILE
-            container.innerHTML += `<li><div class="forced-margin"></div></li>`;
+            container.innerHTML += `<li><div class="pixel"></div></li>`;
         }
     }
 }

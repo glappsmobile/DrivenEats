@@ -96,8 +96,12 @@ main > * {
     margin-left: 20px;
 }
 
-.forced-margin {
-    width: 5px;
+.ctn-options > :last-child {
+    margin-right: 0;
+}
+
+.pixel {
+    width: 1px;
     height: 1px;
 }
 
