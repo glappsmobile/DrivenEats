@@ -17,6 +17,11 @@ function addOptions(iArrOptions, index){
         <ion-icon name="checkmark-circle" class="check-icon"></ion-icon>
         </li>
         `;
+
+        if (i === iArrOptions.length-1){
+            //WORKAROUND FOR ADDING A MARGIN-RIGHT ON LAST-CHILD ON MOBILE
+            container.innerHTML += `<li><div class="forced-margin"></div></li>`;
+        }
     }
 }
 

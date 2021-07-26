@@ -96,8 +96,9 @@ main > * {
     margin-left: 20px;
 }
 
-.ctn-options > :last-child {
-    margin-right: 20px !important;
+.forced-margin {
+    width: 10px;
+    height: 1px;
 }
 
 .card-option {
