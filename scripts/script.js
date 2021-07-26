@@ -10,7 +10,7 @@ function addOptions(iArrOptions, index){
 
         container.innerHTML += `
         <li class="card-option ${type} ${i}" onclick="select(this)">
-        <img src="images/${id}.jpg"/>
+        <img src="images/${id}.jpg" alt="${name}"/>
         <p><strong>${name}</strong></p>
         <p class="txt-option-desc">${description}</p>
         <p class="txt-black">R$ ${price}</p>
