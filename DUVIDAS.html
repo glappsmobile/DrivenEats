@@ -91,7 +91,7 @@ function addOptions(iArrOptions, index){
     /*MESMO QUE .joined-text SEJA MAIS ESPECÍFICO, SÓ CONSEGUI APLICAR A PROPRIEDADE USANDO !important.
     CASO CONTRÁRIO A PROPRIEDADE DO .ctn-items-confirm > div SOBREPÕE A DO .joined-text.
     EU NÃO PRECISO MAIS DA CLASSE PORQUE CONSEGUI RESOLVER DE OUTRA FORMA, MAS DEIXEI ELA LÁ SÓ PA PODER TIRAR ESSA
-    DÚVIDA, ESSA CLASSE SE APLICA NA JANELA DE CONFIRMAÇÃO DE PEDIDOS, NAS DIVS DO NOME E DO ENDEREÇO
+    DÚVIDA, ESSA CLASSE SE APLICA NA JANELA DE CONFIRMAÇÃO DE PEDIDOS, NAS <li> DO NOME E DO ENDEREÇO
     */
 </style>
 
@@ -131,5 +131,48 @@ function addOptions(iArrOptions, index){
     EXISTE ALGUMA FORMA DE EVITAR QUE A MARGEM SEJA COMIDA, SEM TER QUE ADICIONAR ESSE PIXEL?
 
     LINK DO GITHUB PAGES: https://glappsmobile.github.io/DrivenEats/
+    */
+</script>
+
+<script>
+    /* DUVIDA 6: O QUE SERIA MELHOR (CASO OUTRA PESSOA PEGUE O CÓDIGO PRA FAZER MANUTENÇÃO), PASSAR APENAS this NO PARÂMETRO ONCLICK DAS OPÇÕES 
+    
+    <li class="card-option food-type-0 0" onclick="select(this)">
+
+    E NA FUNÇÃO select(element) BUSCAR A CATEGORIA PRA REMOVER O SELECT DOS ITENS APENAS DAQUELA CATEGORIA */
+    
+    
+    function select(element, type){
+        //TAKES THE ELEMENT'S 2nd CLASS (.type-food-nth) TO IDENTIFY WHICH CATEGORY IS BEING SELECTED
+        let type = element.classList[1];
+        let prevSelected = document.querySelector(`.card-option` + `.${type}` + `.selected`);
+
+        if (prevSelected !== null) prevSelected.classList.remove("selected");
+        element.classList.add("selected");
+
+        checkRequirements();
+    }
+    
+    /*
+        OU PASSAR A CATEGORIA DIRETAMENTE NO PARÂMETRO
+
+        <li class="card-option food-type-0 0" onclick="select(this, 'food-type-0')">
+    */
+
+    function select(element, type){
+        let prevSelected = document.querySelector(`.card-option` + `.${type}` + `.selected`);
+
+        if (prevSelected !== null) prevSelected.classList.remove("selected");
+        element.classList.add("selected");
+
+        checkRequirements();
+    }
+
+    /*
+        NA MINHA VISÃO, A DESVANTAGEM DO PRIMEIRO É QUE SE TROCAR A ORDEM DAS CLASSES, PODE DAR PROBLEMA CASO A PESSOA NÃO CONGURE A FUNÇÃO select
+        E A VANTAGEM É QUE PRECISA DE UM ÚNICO PARÂMETRO, ENTÃO TODAS AS OPÇÕES PODEM RECEBER O MESMO onclick.
+
+        JÁ A SEGUNDA É MAIS SEGURA EM CASO DE MODIFICAÇÕES, PORÉM AS OPÇÕES DE CADA CATEGORIA VÃO RECEBER UM onclick UM POUCO DIFERENTE E TERÁ UM 
+        CTRL C + CTRL V NO NOME DA CLASSE DA CATEGORIA E NO SEGUNDO PARAMETRO
     */
 </script>
