@@ -146,7 +146,7 @@ function cleanValues(){
 
 function sendToWhatsapp(){ 
     message = encodeURIComponent(message);
-    window.open(`https://wa.me/${contactNumber}?text=${message}`);
+    window.open(`https://wa.me/${contactNumber}?text=${message}`, "_self");
 }
 
 let clientInfo = "";
