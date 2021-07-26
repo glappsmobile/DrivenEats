@@ -1,4 +1,4 @@
-let arrOptions = [
+const arrOptions = [
     [
         {name:"Strogonoff", id:"strogonoff", desc:"Strogonoff de frango, batata palha e arroz", price:"17,00"},
         {name:"Baião de dois", id:"baiao-de-dois", desc:"", price:"23,00"}, 
@@ -25,4 +25,6 @@ let arrOptions = [
 
 ]
 
-let types = ["Prato", "Bebida", "Sobremesa"];
+const types = ["Prato", "Bebida", "Sobremesa"];
+
+const contactNumber = "5521968090449";

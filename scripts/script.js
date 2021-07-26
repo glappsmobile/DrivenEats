@@ -110,7 +110,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
     container.innerHTML +=  `
     <li class="row-item-confirm">
     <span>${name}</span>
-    <span class="price">R$ ${price}</span>
+    <span>R$ ${price}</span>
     </li>
     `;
     
@@ -123,7 +123,7 @@ function generateRevisionScreen(elementIndex, typeIndex){
         container.innerHTML += `
         <li class="row-item-confirm">
         <span><strong> TOTAL </strong></span>
-        <span class="price"><strong>R$ ${strTotalPrice} </strong></span>
+        <span><strong>R$ ${strTotalPrice} </strong></span>
         </li>
         `;
     }
@@ -141,7 +141,7 @@ function cleanValues(){
 
 function sendToWhatsapp(){ 
     message = encodeURIComponent(message);
-    window.open("https://wa.me/5521968090449?text=" + message);
+    window.open(`https://wa.me/${contactNumber}?text=${message}`);
 }
 
 let clientInfo = "";
